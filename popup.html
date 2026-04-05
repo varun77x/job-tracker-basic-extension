@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Tracker</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>&#128188; Job Tracker</h1>
+    </header>
+
+    <div id="message" class="message" style="display:none;"></div>
+
+    <form id="job-form">
+
+      <div class="field">
+        <label for="company">Company <span class="required">*</span></label>
+        <input type="text" id="company" placeholder="e.g. Google" required />
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="date">Date <span class="required">*</span></label>
+          <input type="date" id="date" required />
+        </div>
+        <div class="field">
+          <label for="status">Status</label>
+          <select id="status">
+            <option value="Applied">Applied</option>
+            <option value="Phone Screen">Phone Screen</option>
+            <option value="Technical Interview">Technical Interview</option>
+            <option value="Final Interview">Final Interview</option>
+            <option value="Offer">Offer</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Withdrawn">Withdrawn</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="role">Role <span class="required">*</span></label>
+        <input type="text" id="role" placeholder="e.g. Software Engineer" required />
+      </div>
+
+      <div class="field">
+        <label for="jobId">Job ID <span class="optional">(optional)</span></label>
+        <input type="text" id="jobId" placeholder="e.g. JR-12345" />
+      </div>
+
+      <div class="field">
+        <label for="url">
+          URL <span class="auto-tag">auto</span>
+        </label>
+        <input type="text" id="url" placeholder="Captured from current tab…" />
+      </div>
+
+      <button type="submit" class="btn-primary">+ Add Job</button>
+
+    </form>
+
+    <section class="jobs-section">
+      <div class="jobs-header">
+        <span id="job-count">0 jobs tracked</span>
+        <button id="export-btn" class="btn-secondary">&#11123; Export CSV</button>
+      </div>
+      <div id="job-list"></div>
+    </section>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
